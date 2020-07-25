@@ -4,7 +4,7 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-const mongoose = require('mongoose');
+const MongoClient = require('mongodb').MongoClient;
 
 
 var index = require('./routes/index');
@@ -15,13 +15,12 @@ var app = express();
 
 
 
-mongoose.Promise = global.Promise;
-
-//Adds connection to database using mongoose
-//for <dbuser>:replace with your username, <dbpassword>: replace with your password.
-//<DATABASE_URL>: replace with database url, example:ds234562.mlab.com:17283
-mongoose.connect('<dbuser>:<dbpassword>@<DATABASE_URL>/appointments', {
-  useMongoClient: true
+const uri = "mongodb+srv://bhanu:mydatabase@appointment.wwf9l.mongodb.net/appointment?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
 });
 
 
