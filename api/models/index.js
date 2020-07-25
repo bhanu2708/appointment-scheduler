@@ -1,8 +1,8 @@
-const mongoose = require('mongoose');
+const MongoClient = require('mongodb').MongoClient;
 
-const Schema = mongoose.Schema,
-  model = mongoose.model.bind(mongoose),
-  ObjectId = mongoose.Schema.Types.ObjectId;
+const Schema = MongoClient.Schema,
+  model = MongoClient.model.bind(MongoClient),
+  ObjectId = MongoClient.Schema.Types.ObjectId;
 
 
   const slotSchema = new Schema ({
