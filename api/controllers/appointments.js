@@ -25,8 +25,8 @@ const appointmentController = {
     });
 
     const nexmo = new Nexmo({
-      apiKey: "YOUR_API_KEY",
-      apiSecret: "YOUR_API_SECRET"
+      apiKey: 0df2667d,
+      apiSecret: u0MJCSMmTzpZuGIf
     });
 
     let msg =
